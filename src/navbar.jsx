@@ -1,25 +1,31 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import './index.css';
 
 function NavbarComponent() {
   return (
-    <>
-      <Navbar bg="dark" data-bs-theme="dark">
-        <Container>
-          {/* Add 'ms-auto' to push the Nav items to the right */}
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Container>
+        {/* Navbar Brand */}
+        <Navbar.Brand as={Link} to="/">My Website</Navbar.Brand>
+
+        {/* Navbar Toggle for mobile */}
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        
+        {/* Navbar Collapse for nav links */}
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#about">About</Nav.Link>
-            <Nav.Link href="#education">Education</Nav.Link>
-            <Nav.Link href="#hobbies">Hobbies</Nav.Link>
-            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+            <Nav.Link as={Link} to="/education">Education</Nav.Link>
+            <Nav.Link as={Link} to="/hobbies">Hobbies</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           </Nav>
-        </Container>
-      </Navbar>
-      <br />
-    </>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

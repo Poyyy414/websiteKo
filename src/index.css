@@ -4,11 +4,9 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ebebeb;
-  position: relative; /* Ensure stacking context for wave */
-  overflow-y:scroll; /* Allow vertical scrolling */
-  height: 100%; /* Ensure full height for scrolling */
-  position: static;
-  top:100px;
+  position: relative;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 /* Wave styling */
@@ -23,108 +21,192 @@ body {
   opacity: 0.8;
 }
 
-/* Navbar styles */
+/* General navbar styling */
 .navbar-light {
   background-color: #ffffff;
   border-bottom: 2px solid #2474dd;
   padding: 1rem 3rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 /* Navbar Brand */
 .navbar-light .navbar-brand {
   color: #0056b3;
   font-weight: bold;
-  font-size: 1.5rem;
-  margin-right: 2rem; /* Space between brand and the rest */
-  padding: 0.5rem;
-  transition: color 0.3s ease;
+  font-size: 2rem;
+  margin-right: 3rem;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-light .navbar-brand:hover {
   color: #003d82;
+  transform: scale(1.1);
 }
 
-/* Navbar items container (right-aligned links) */
+/* Navbar items container */
 .navbar-nav {
-  display: flex; /* Flexbox to align items in a row */
-  margin-left: auto; /* Pushes items to the right */
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  gap: 1rem; /* Space between items */
 }
 
 /* Individual navbar links */
 .navbar-light .nav-link {
   color: #555555;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  margin-right: 0.5rem; /* Spacing between links */
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
 }
 
 .navbar-light .nav-link:hover {
   color: #ffffff;
   background-color: #007bff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
 }
 
 /* Active link styling */
 .navbar-light .nav-link.active {
   color: #ffffff;
   background-color: #007bff;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Navbar toggle button for mobile */
+.navbar-toggler {
+  border-color: #007bff;
+}
+
+.navbar-toggler-icon {
+  background-color: #007bff;
 }
 
 /* Container adjustments for navbar */
 .container-navbar {
-  max-width: 1200px; /* Keeps navbar content centered on larger screens */
-  padding: 0 1rem; /* Adds padding around the navbar */
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
-.context {
-  font-size: x-large;
-  display: flex;
-  flex-direction: column; /* Aligns items vertically */
-  font-size: 1rem;
+/* Dropdown menu */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  color: #555555;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navbar-light {
+    padding: 1rem 2rem;
+  }
+
+  .navbar-light .navbar-brand {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+    display: none;
+  }
+
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .navbar-light .nav-link {
+    padding: 0.75rem 1rem;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+
+  .navbar-light .nav-link:hover {
+    background-color: #0056b3;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+
+.body h2 {
+  font-size: 1.5rem;
   font-family: 'Times New Roman', Times, serif;
   color: black;
   margin: 100px;
 }
 
-.context h1 {
-  font-size: 3rem;
+.body h1 {
+  font-size: 5vw;
   color: #000000;
+  margin: 100px;
 }
 
-.context h2 {
-  font-size: 1.5rem;
-  color: #000000;
- 
-}
-
-.context p {
+.body p {
   font-size: 1rem;
   line-height: 1.5;
   color: #000000;
-  word-spacing: 0.5;
-  line-height: 1.5;
+  word-spacing: 0.5rem;
+  margin: 100px;
 }
 
 .dp {
-  border-radius: 50%;            /* Circular image */
-  height: 300px;                 /* Adjusted size for better balance */
+  border-radius: 50%;
+  height: 300px;
   width: 300px;
   position: absolute;
-  right: 250px;                   /* Positioned closer to the right edge */
-  bottom: 100px;                  /* Positioned closer to the bottom */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* Adds a soft shadow */
-  border: 5px solid #ffffff;     /* White border for a polished look */
-  transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+  right: 250px;
+  bottom: 100px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border: 5px solid #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dp:hover {
-  transform: scale(1.05);        /* Slight zoom on hover */
+  transform: scale(1.05);
 }
 
-/* About container to center and align content */
-.about-container {
+.hobby-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -133,58 +215,48 @@ body {
   text-align: center;
 }
 
-/* Title styling */
-h1 {
+.hobby-container h1 {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 30px;
 }
 
-/* Hobby Cards Row - Container for both Guitar and Basketball sections */
 .hobby-cards-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Align cards to the top */
+  align-items: flex-start;
   width: 80%;
   margin-top: 20px;
 }
 
-/* Common Card Styling for hobbies */
 .hobby-card {
   width: 100%;
-  max-width: 20rem; /* Medium size card */
+  max-width: 20rem;
   padding: 10px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   margin: 20px;
   text-align: center;
-  position: relative;
-  border: 2px solid rgb(43, 30, 218); /* Added black border line around the card */
+  border: 2px solid rgb(43, 30, 218);
 }
 
-/* Styling the title of the card */
 .hobby-card h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #007bff; /* Blue color for the title */
+  color: #007bff;
   margin-bottom: 15px;
 }
 
-/* Image styling for hobby cards */
 .hobby-img {
   border-radius: 50%;
-  width: 100px; /* Medium size image */
+  width: 100px;
   height: 100px;
   object-fit: cover;
   border: 4px solid #007bff;
   margin-bottom: 15px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Styling the text below the image */
 .hobby-card p {
   font-size: 1.1rem;
   color: #333;
@@ -192,7 +264,6 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* Button styling */
 .learn-chords-btn, .learn-ball-btn {
   background-color: #007bff;
   color: white;
@@ -206,42 +277,112 @@ h1 {
   margin-top: 10px;
 }
 
-/* Hover effects for buttons */
 .learn-chords-btn:hover, .learn-ball-btn:hover {
   background-color: #0056b3;
 }
 
-/* Separate containers for each hobby (used in flexbox row) */
-.guitar-container, .basketball-container {
-  flex: 2; /* Ensure each section takes equal space */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  
-}
-
-/* Responsive design for mobile */
 @media (max-width: 768px) {
   .hobby-card {
-    width: 90%; /* Full-width card for small screens */
+    width: 90%;
+    margin: 10px auto;
   }
 
-  .hobby-img {
-    width: 90px;
-    height: 90px;
-  }
-
-  /* Ensure that the hobby containers stack vertically on small screens */
   .hobby-cards-row {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 100%;
-  }
-
-  .guitar-container, .basketball-container {
-    width: 100%;
-    justify-content: center;
-    height: 100%;
   }
 }
+
+.education {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.education h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.education h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.education p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.contact {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact h2 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.about {
+  padding: 20px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about h1 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
