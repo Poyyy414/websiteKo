@@ -20,123 +20,86 @@ body {
   object-fit: cover;
   opacity: 0.8;
 }
-
-/* General navbar styling */
+/* Navbar Styling */
 .navbar-light {
-  background-color: #ffffff;
-  border-bottom: 2px solid #2474dd;
-  padding: 1rem 3rem;
+  background-color: #dfdfdf; /* Lighter shade for a modern look */
+  border-bottom: 2px solid #090b0e;
+  padding: 1rem 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  position: fixed; /* Fixed position for sticky navbar */
+  width: 100%; /* Ensures full-width alignment */
   top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
+  z-index: 10; /* Higher z-index for visibility */
+  
 }
 
-/* Navbar Brand */
 .navbar-light .navbar-brand {
-  color: #0056b3;
+  color: #003d82; /* Changed to a more striking blue */
   font-weight: bold;
   font-size: 2rem;
-  margin-right: 3rem;
-  letter-spacing: 2px;
+  margin-right: 2rem;
+  letter-spacing: 1.5px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-light .navbar-brand:hover {
-  color: #003d82;
+  color: #0056b3;
   transform: scale(1.1);
 }
 
-/* Navbar items container */
 .navbar-nav {
   display: flex;
   margin-left: auto;
   align-items: center;
-  gap: 1rem; /* Space between items */
+  gap: 1.5rem; /* Increased gap for better spacing */
 }
 
-/* Individual navbar links */
 .navbar-light .nav-link {
-  color: #555555;
+  color: #333;
   font-weight: 500;
-  font-size: 1.2rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.25rem;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px; /* Rounded corners */
   transition: all 0.3s ease;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .navbar-light .nav-link:hover {
   color: #ffffff;
-  background-color: #007bff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+  background-color: #007bff; /* Subtle blue hover effect */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Active link styling */
 .navbar-light .nav-link.active {
   color: #ffffff;
-  background-color: #007bff;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+  background-color: #003d82; /* Slightly darker for active links */
+  box-shadow: 0 4px 10px rgba(0, 61, 130, 0.5);
 }
 
-/* Navbar toggle button for mobile */
+/* Navbar Toggler */
 .navbar-toggler {
-  border-color: #007bff;
+  display: none; /* Hidden on larger screens */
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.navbar-toggler-icon {
-  background-color: #007bff;
-}
-
-/* Container adjustments for navbar */
-.container-navbar {
-  max-width: 1200px;
-  padding: 0 1rem;
-}
-
-/* Dropdown menu */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease-in-out;
-}
-
-/* Dropdown menu styles */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff;
-  border-radius: 0.25rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  min-width: 180px;
-  z-index: 1000;
-}
-
-.dropdown-menu a {
-  color: #555555;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f1f1f1;
+.navbar-toggler:hover {
   color: #007bff;
 }
 
-/* Responsive design for smaller screens */
+/* Navbar mobile responsiveness */
 @media (max-width: 768px) {
   .navbar-light {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
   }
 
   .navbar-light .navbar-brand {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-right: 1rem;
   }
 
@@ -145,18 +108,24 @@ body {
     margin-left: 0;
     width: 100%;
     text-align: center;
-    display: none;
+    display: none; /* Hidden by default */
+    background-color: #f4f4f4; /* Matches navbar color */
+    position: absolute; /* Dropdown effect */
+    top: 100%; /* Below navbar */
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
   }
 
   .navbar-nav.show {
-    display: flex;
+    display: flex; /* Shown when toggled */
   }
 
   .navbar-light .nav-link {
     padding: 0.75rem 1rem;
-    margin-right: 0;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
     width: 100%;
+    text-align: center;
   }
 
   .navbar-light .nav-link:hover {
@@ -164,88 +133,177 @@ body {
   }
 
   .navbar-toggler {
-    display: block;
+    display: block; /* Visible on mobile */
+  }
+}
+
+/* General Body Styling */
+.body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle, #ffffff, #e0e0e0);
+  color: #333333;
+  text-align: center;
+  padding: 50px 20px;
+  position: relative;
+  opacity: 0.999;
+}
+
+/* Headings Styling */
+.body h1 {
+  font-size: 3.5rem;
+  color: #333333;
+  font-weight: 700;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.body h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #555555;
+  margin: 20px 0;
+  position: relative;
+  top:40px;
+
+}
+
+/* Paragraph Styling */
+.body p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444444;
+  margin: 0 auto 20px;
+  max-width: 600px; /* Limits text width for better readability */
+  text-align: justify;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Profile Picture Styling */
+.dp {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  margin: 50px auto 20px auto; /* Adjusted margin to ensure spacing */
+  display: block;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
+  border: 6px solid #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  top: 60px; /* Adjusted the top value to move the profile picture down */
+  z-index: 2; /* Ensures the profile stays above other elements */
+}
+
+/* Optional: Adjust positioning for mobile responsiveness */
+@media (max-width: 768px) {
+  .dp {
+    top: 80px; /* Increased top margin for mobile */
+    margin-top: 100px; /* Adds more space on smaller screens */
   }
 }
 
 
-.body h2 {
-  font-size: 1.5rem;
-  font-family: 'Times New Roman', Times, serif;
-  color: black;
-  margin: 100px;
-}
-
-.body h1 {
-  font-size: 5vw;
-  color: #000000;
-  margin: 100px;
-}
-
-.body p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000000;
-  word-spacing: 0.5rem;
-  margin: 100px;
-}
-
-.dp {
-  border-radius: 50%;
-  height: 300px;
-  width: 300px;
-  position: absolute;
-  right: 250px;
-  bottom: 100px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  border: 5px solid #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .dp:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* Decorative Divider */
+.divider {
+  width: 80px;
+  height: 4px;
+  background: #007bff;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+/* Call-to-Action Button */
+.body .cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.body .cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Background Accent */
+.background-accent {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #007bff, #0056b3);
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 70%);
+  z-index: -1;
+}
+
 
 .hobby-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 1px;
   text-align: center;
+  
 }
 
 .hobby-container h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  top: 80px;
 }
 
 .hobby-cards-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 80%;
-  margin-top: 20px;
+  width: 70%;
+  margin-top: 10px;
 }
 
 .hobby-card {
-  width: 100%;
+  width: 80%;
   max-width: 20rem;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   margin: 20px;
   text-align: center;
   border: 2px solid rgb(43, 30, 218);
+  position: relative;
+  top: 60px;
 }
 
+
 .hobby-card h2 {
+  margin-top: 20px;
   font-size: 1.8rem;
   font-weight: bold;
   color: #007bff;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  top: auto;
 }
 
 .hobby-img {
@@ -254,14 +312,14 @@ body {
   height: 100px;
   object-fit: cover;
   border: 4px solid #007bff;
-  margin-bottom: 15px;
+  
 }
 
 .hobby-card p {
   font-size: 1.1rem;
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 15px;
+  line-height: 1.2;
+  margin: 2px;
 }
 
 .learn-chords-btn, .learn-ball-btn {
@@ -296,49 +354,182 @@ body {
 
 .education {
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: rgba(249, 249, 249, 0.9); /* Use RGBA for transparency */
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Ensure it is above the background image */
+  margin: 20px;
+  opacity: 0.7;
 }
 
-.education h1 {
-  font-size: 2.5rem;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-.education h2 {
+/* Elementary Section */
+.elementary {
   font-size: 1.8rem;
-  color: #007bff;
+  color: #007bff; /* Blue color */
+  margin-bottom: 5px; /* Slight spacing below the title */
   margin-top: 20px;
+  position: relative;
+  transform: translateY(-250px); /* Dynamic positioning */
+  transition: transform 0.3s ease, margin-top 0.3s ease; /* Smooth transition for adjustments */
+  
 }
 
-.education p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 20px;
+/* Adjust on small screens */
+@media (max-width: 768px) {
+  .elementary {
+    font-size: 1.5rem; /* Slightly smaller font size */
+    margin-top: 10px; /* Less margin for smaller screens */
+    transform: translateY(-100px); /* Adjust vertical position on small screens */
+  }
 }
+
+/* Adjust for very small screens */
+@media (max-width: 480px) {
+  .elementary {
+    font-size: 1.2rem; /* Further reduction for mobile */
+    margin-top: 5px;
+    transform: translateY(-50px); /* Smaller offset on mobile */
+  }
+}
+
+
+.elementary-description {
+  font-size: 1rem;
+  color: #333; /* Dark text color for readability */
+  line-height: 1.6; /* Add line spacing for better readability */
+  top:-220px;
+  position: relative;
+}
+
+/* High School Section */
+.highschool {
+  font-size: 1.8rem;
+  color: #007bff; /* Blue color */
+  margin-top: 20px;
+  margin-bottom: 5px;
+  position: relative;
+  transform: translateY(-170px);
+  
+}
+
+.highschool-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  position: relative;
+  top: -130px;
+}
+
+/* College Section */
+.college {
+  font-size: 1.8rem;
+  color: #007bff; /* Blue color */
+  margin-top: 20px;
+  margin-bottom: 5px;
+  position: relative;
+  transform: translateY(-20px);
+}
+
+.college-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+.ccdps {
+  border-radius: 20%; /* Adjust as needed (50% for circular images) */
+  width: 100px; /* Increased size for better visibility */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px auto; /* Center image and add spacing */
+  display: block; /* Ensure proper alignment */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Optional hover effect */
+.ccdps:hover {
+  transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+.calhigh {
+  border-radius: 20%; /* Rounded corners */
+  width: 100px; /* Image size */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px auto; /* Center image horizontally with spacing */
+  display: block; /* Align image as a block-level element */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  position: relative; /* Enable positioning adjustments */
+  top:150px;
+}
+
+/* Adjust position relative to the container */
+.calhigh-container {
+  position: relative;
+  text-align: center; /* Center the image horizontally */
+  padding: 20px; /* Add space around the image */
+  top:200px;
+}
+
+/* Optional hover effect */
+.calhigh:hover {
+  transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+.ncf {
+  border-radius: 20%; /* Rounded corners */
+  width: 100px; /* Image size */
+  height: auto; /* Maintain aspect ratio */
+  margin: 10px auto; /* Center image horizontally with spacing */
+  display: block; /* Align image as a block-level element */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  position: relative; /* Enable positioning adjustments */
+  top:390px;
+}
+
+.ncf-container {
+  position: relative;
+  text-align: center; /* Center the image horizontally */
+  padding: 20px; /* Add space around the image */
+  top:200px;
+}
+
+.ncf:hover {
+  transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
 
 .contact {
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 50px;
+  background-color: rgba(249, 249, 249, 0.9); /* Use RGBA for transparency */
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Ensure it is above the background image */
+  margin: 20px;
+  opacity: 0.7;
 }
 
 .contact h1 {
+  margin-top: 10px;
   font-size: 2.5rem;
   color: #333;
   text-align: center;
   margin-bottom: 20px;
+  z-index: 1;
+  opacity: 0.7;
+  
 }
 
 .contact h2 {
   font-size: 1.5rem;
   color: #007bff;
   margin-top: 20px;
+  text-align: center;
+  position: relative;
+  top:10px;
 }
 
 .contact p {
@@ -359,30 +550,64 @@ body {
 }
 
 .about {
-  padding: 20px;
-  background-color: #f4f4f9;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background: linear-gradient(135deg, #f4f4f9, #eaeaf2); /* Adds a gradient for a soft modern look */
+  border-radius: 12px; /* Slightly rounder corners for a modern feel */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Enhances shadow for better depth */
+  margin: 20px auto;
+  max-width: 800px; /* Centers and limits the width for readability */
+  opacity: 1; /* Set opacity to full for clear visibility */
+  border: 1px solid #dcdcdc; /* Adds a subtle border */
+  opacity: 0.8;
 }
 
 .about h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #333;
   text-align: center;
   margin-bottom: 20px;
+  text-transform: uppercase; /* Adds emphasis */
+  letter-spacing: 2px; /* Adds spacing for a stylish look */
 }
 
 .about h2 {
-  font-size: 1.8rem;
-  color: #007bff;
-  margin-top: 20px;
+  font-size: 2rem;
+  color: #0056b3; /* Slightly darker blue for better contrast */
+  margin-top: 25px;
+  text-transform: capitalize; /* Consistent capitalization */
+  border-left: 4px solid #007bff; /* Adds a left border for emphasis */
+  padding-left: 10px; /* Creates spacing between border and text */
+  position: relative;
+  top:15px;
 }
 
 .about p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;  
   color: #555;
-  line-height: 1.6;
+  line-height: 1.8;
   text-align: justify;
   margin-bottom: 20px;
+  word-spacing: 0.1rem; /* Slight spacing for readability */
 }
+
+.about::before {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 80px;
+  margin: 0 auto 20px auto;
+  background: #007bff; /* Adds a decorative horizontal line above the section */
+  border-radius: 2px;
+}
+
+.about::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 80px;
+  margin: 20px auto 0 auto;
+  background: #007bff; /* Adds a decorative horizontal line below the section */
+  border-radius: 2px;
+}
+
 

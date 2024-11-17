@@ -2,6 +2,8 @@ import React from "react";
 import './index.css';
 import guitar from './assets/guitar.jpg';
 import ball from './assets/ball.jpg';
+import bg from './assets/bg.jpg';
+
 
 // Reusable Hobby Card Component
 function HobbyCard({ image, title, description, buttonText, buttonClass }) {
@@ -17,8 +19,13 @@ function HobbyCard({ image, title, description, buttonText, buttonClass }) {
 
 function Hobbies() {
   return (
+    
+    <div className="body">
+    {/* Background image */}
+    <img className="bg" src={bg} alt="Background" />
+    
     <div className="hobby-container">
-      <h1>About Me</h1> {/* Main title */}
+      <h1>Hobbies</h1> {/* Main title */}
       
       {/* Hobby Cards Row */}
       <div className="hobby-cards-row">
@@ -40,6 +47,7 @@ function Hobbies() {
           buttonClass="learn-ball-btn"
         />
       </div>
+    </div>
     </div>
   );
 }
