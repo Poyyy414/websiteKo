@@ -18,24 +18,30 @@ body {
   left: 0;
   z-index: -1;
   object-fit: cover;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 /* Navbar Styling */
 .navbar-light {
-  background-color: #dfdfdf; /* Lighter shade for a modern look */
-  border-bottom: 2px solid #090b0e;
+  background-color: #f8f9fa; /* Subtle lighter shade for modern aesthetics */
+  border-bottom: 2px solid #004085; /* Matches the theme's blue color */
   padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Fixed position for sticky navbar */
-  width: 100%; /* Ensures full-width alignment */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+  position:absolute;
+  width: 100%;
   top: 0;
-  z-index: 10; /* Higher z-index for visibility */
-  
+  z-index: 10;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0.7;
+}
+
+.navbar-light:hover {
+  background-color: #ffffff; /* Slightly brighter background on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow for interaction */
 }
 
 .navbar-light .navbar-brand {
-  color: #003d82; /* Changed to a more striking blue */
-  font-weight: bold;
+  color: #004085; /* Bold and striking blue */
+  font-weight: 700;
   font-size: 2rem;
   margin-right: 2rem;
   letter-spacing: 1.5px;
@@ -43,38 +49,38 @@ body {
 }
 
 .navbar-light .navbar-brand:hover {
-  color: #0056b3;
-  transform: scale(1.1);
+  color: #0056b3; /* Lighter blue on hover */
+  transform: scale(1.1); /* Subtle enlargement */
 }
 
 .navbar-nav {
   display: flex;
   margin-left: auto;
   align-items: center;
-  gap: 1.5rem; /* Increased gap for better spacing */
+  gap: 2rem; /* Improved spacing between items */
 }
 
 .navbar-light .nav-link {
-  color: #333;
+  color: #555555; /* Softer gray for default state */
   font-weight: 500;
   font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px; /* Rounded corners */
+  padding: 0.5rem 1.2rem; /* Balanced padding for better spacing */
+  border-radius: 25px; /* Rounded pill-shaped buttons */
   transition: all 0.3s ease;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.6px;
 }
 
 .navbar-light .nav-link:hover {
   color: #ffffff;
-  background-color: #007bff; /* Subtle blue hover effect */
-  transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  background-color: #004085; /* Bold blue background for hover */
+  transform: translateY(-3px); /* Floating effect */
+  box-shadow: 0 8px 20px rgba(0, 64, 133, 0.4); /* Glowing hover effect */
 }
 
 .navbar-light .nav-link.active {
   color: #ffffff;
-  background-color: #003d82; /* Slightly darker for active links */
-  box-shadow: 0 4px 10px rgba(0, 61, 130, 0.5);
+  background-color: #0056b3; /* Lighter blue for active links */
+  box-shadow: 0 4px 15px rgba(0, 86, 179, 0.5); /* Subtle emphasis */
 }
 
 /* Navbar Toggler */
@@ -82,20 +88,21 @@ body {
   display: none; /* Hidden on larger screens */
   border: none;
   background-color: transparent;
-  font-size: 1.5rem;
-  color: #333;
+  font-size: 1.8rem;
+  color: #333333;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .navbar-toggler:hover {
-  color: #007bff;
+  color: #0056b3;
 }
 
 /* Navbar mobile responsiveness */
 @media (max-width: 768px) {
   .navbar-light {
     padding: 1rem 1.5rem;
+    border-bottom: none; /* Cleaner look for smaller screens */
   }
 
   .navbar-light .navbar-brand {
@@ -109,12 +116,13 @@ body {
     width: 100%;
     text-align: center;
     display: none; /* Hidden by default */
-    background-color: #f4f4f4; /* Matches navbar color */
-    position: absolute; /* Dropdown effect */
+    background-color: #f8f9fa; /* Matches navbar color */
+    position: absolute;
     top: 100%; /* Below navbar */
     left: 0;
     padding: 1rem 0;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-top: 2px solid #004085; /* Seamless transition */
   }
 
   .navbar-nav.show {
@@ -129,13 +137,14 @@ body {
   }
 
   .navbar-light .nav-link:hover {
-    background-color: #0056b3;
+    background-color: #004085;
   }
 
   .navbar-toggler {
     display: block; /* Visible on mobile */
   }
 }
+
 
 /* General Body Styling */
 .body {
@@ -170,31 +179,58 @@ body {
 
 /* Paragraph Styling */
 .body p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #444444;
-  margin: 0 auto 20px;
-  max-width: 600px; /* Limits text width for better readability */
+  font-size: 1.2rem; /* Slightly larger font for better readability */
+  line-height: 1.8; 
+  color: #333333; /* A slightly darker gray for improved contrast */
+  margin: 0 auto 20px; 
+  max-width: 650px; /* Adjusted for better balance */
   text-align: justify;
-  padding: 10px 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  padding: 15px 25px; /* Added more padding for a cleaner look */
+  background-color: #f9f9f9; /* Softer background color */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Slightly rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #ff914d; /* Adds a decorative left border */
 }
+
+/* Hover Effect */
+.body p:hover {
+  transform: translateY(-5px); /* Slight elevation on hover */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+  background-color: #ffffff; /* Brightens background on hover */
+}
+
+/* Optional: Responsive Adjustments */
+@media (max-width: 768px) {
+  .body p {
+    font-size: 1.1rem; /* Slightly smaller text for smaller screens */
+    padding: 10px 15px; /* Adjusted padding */
+    max-width: 100%; /* Uses full width on small screens */
+  }
+}
+
 
 /* Profile Picture Styling */
 .dp {
   border-radius: 50%;
   height: 250px;
   width: 250px;
-  margin: 50px auto 20px auto; /* Adjusted margin to ensure spacing */
+  margin: 50px auto 20px auto; /* Centered with proper spacing */
   display: block;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.25);
   border: 6px solid #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
-  top: 60px; /* Adjusted the top value to move the profile picture down */
-  z-index: 2; /* Ensures the profile stays above other elements */
+  top: 60px; /* Position adjusted */
+  z-index: 2; /* Keeps the profile on top */
+  background: linear-gradient(135deg, #f6d365, #fda085); /* Adds a gradient background */
+}
+
+/* Hover Effects */
+.dp:hover {
+  transform: scale(1.1); /* Enlarges the image slightly */
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4), 0px 0px 15px rgba(255, 215, 0, 0.6); /* Adds a glow effect */
+  border-color: rgba(255, 215, 0, 0.8); /* Subtle golden border color */
 }
 
 /* Optional: Adjust positioning for mobile responsiveness */
@@ -202,13 +238,9 @@ body {
   .dp {
     top: 80px; /* Increased top margin for mobile */
     margin-top: 100px; /* Adds more space on smaller screens */
+    height: 200px; /* Reduces size for smaller screens */
+    width: 200px;
   }
-}
-
-
-.dp:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
 }
 
 /* Decorative Divider */
@@ -353,13 +385,14 @@ body {
 }
 
 .education {
-  padding: 20px;
+  padding: 30px 50px 50px 50px; /* Adjust padding for top, right, bottom, and left */
   background-color: rgba(249, 249, 249, 0.9); /* Use RGBA for transparency */
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1; /* Ensure it is above the background image */
-  margin: 20px;
+  margin: 80px auto;
   opacity: 0.7;
+
 }
 
 
@@ -367,11 +400,12 @@ body {
 .elementary {
   font-size: 1.8rem;
   color: #007bff; /* Blue color */
-  margin-bottom: 5px; /* Slight spacing below the title */
-  margin-top: 20px;
+  margin-bottom: 50px; /* Slight spacing below the title */
+  margin-top: 50px;
   position: relative;
   transform: translateY(-250px); /* Dynamic positioning */
   transition: transform 0.3s ease, margin-top 0.3s ease; /* Smooth transition for adjustments */
+  margin: 50px auto;
   
 }
 
@@ -462,7 +496,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   transition: transform 0.3s ease; /* Smooth hover effect */
   position: relative; /* Enable positioning adjustments */
-  top:150px;
+  top:180px;
 }
 
 /* Adjust position relative to the container */
@@ -487,7 +521,7 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
   transition: transform 0.3s ease; /* Smooth hover effect */
   position: relative; /* Enable positioning adjustments */
-  top:390px;
+  top:420px;
 }
 
 .ncf-container {
@@ -508,7 +542,7 @@ body {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   z-index: 1; /* Ensure it is above the background image */
-  margin: 20px;
+  margin: 80px;
   opacity: 0.7;
 }
 
@@ -550,11 +584,11 @@ body {
 }
 
 .about {
-  padding: 30px;
+  padding: 50px;
   background: linear-gradient(135deg, #f4f4f9, #eaeaf2); /* Adds a gradient for a soft modern look */
   border-radius: 12px; /* Slightly rounder corners for a modern feel */
   box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Enhances shadow for better depth */
-  margin: 20px auto;
+  margin: 80px auto;
   max-width: 800px; /* Centers and limits the width for readability */
   opacity: 1; /* Set opacity to full for clear visibility */
   border: 1px solid #dcdcdc; /* Adds a subtle border */

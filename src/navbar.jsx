@@ -10,7 +10,7 @@ function NavbarComponent() {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
           {/* Navbar Brand */}
-          <Navbar.Brand as={Link} to="/">My Website</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">Personal Website</Navbar.Brand>
 
           {/* Navbar Toggle for mobile */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

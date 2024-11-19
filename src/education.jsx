@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css';
-import bg from './assets/bg.jpg';
+import bg from './assets/bg.gif';
 import ccdps from './assets/ccdps.png';
 import calhigh from './assets/calhigh.jpg';
 import ncf from './assets/ncf.jpg';

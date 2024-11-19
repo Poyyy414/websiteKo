@@ -2,7 +2,7 @@ import React from "react";
 import './index.css';
 import guitar from './assets/guitar.jpg';
 import ball from './assets/ball.jpg';
-import bg from './assets/bg.jpg';
+import bg from './assets/bg.gif';
 
 
 // Reusable Hobby Card Component

@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css';
-import bg from './assets/bg.jpg'; // Replace with the correct image path
+import bg from './assets/bg.gif'; // Replace with the correct image path
 
 function Contact() {
     return (

@@ -1,6 +1,6 @@
 import React from "react";
 import './index.css';
-import bg from './assets/bg.jpg';
+import bg from './assets/bg.gif';
 
 function About() {
     return (
@@ -10,11 +10,11 @@ function About() {
             
             <div className="about">
                 <h1>About Me</h1>
-                <p>Hello, I'm John Paul Cambiado, a student passionate about technology and programming.</p>
+                <p>Hello, I'm John Paul Cambiado, a student passionate about technology and programming 😊.</p>
 
                 <h2>My Journey</h2>
                 <p>
-                    I began my journey with programming at an early age, finding the challenge of coding both exciting and intimidating. Over the years, I have learned to embrace the learning process and overcome the challenges that come with mastering new technologies.
+                I started my programming journey in college, which might seem a bit late, but I’m determined to keep learning. While coding can be both thrilling and daunting, I’ve grown to appreciate the process and tackle the challenges that come with mastering new technologies.
                 </p>
 
                 <h2>My Mission</h2>

@@ -1,5 +1,5 @@
 import React from 'react';
-import bg from './assets/bg.jpg';
+import bg from './assets/bg.gif';
 import dp from './assets/dp.jpg';
 import './index.css';
 
